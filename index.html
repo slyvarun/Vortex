@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VORTEX — Digital Creative Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="icon" type="image/png" href="VORTEX.png">
+<link rel="icon" type="image/png" href="VORTEX.png" style="border-radius: 50%;">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -189,15 +189,15 @@
     animation: fadeUp 0.8s forwards 0.3s;
   }
   .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(5rem, 12vw, 14rem);
-    line-height: 0.9;
-    letter-spacing: 2px;
-    opacity: 0;
-    animation: fadeUp 0.9s forwards 0.5s;
-    position: relative;
-    z-index: 1;
-  }
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 14rem); /* Shrinks to 3.5rem on small phones */
+  line-height: 0.85;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp 0.9s forwards 0.5s;
+  position: relative;
+  z-index: 1;
+}
   .hero-title .line1 { display: block; color: var(--white); }
   .hero-title .line2 {
     display: block;
@@ -391,7 +391,7 @@
     font-size: clamp(4rem, 8vw, 9rem);
     line-height: 0.85;
     color: transparent;
-    -webkit-text-stroke: 1px var(--border);
+    -webkit-text-stroke: 5px var(--border);
     pointer-events: none;
     user-select: none;
     position: relative;
@@ -535,7 +535,7 @@
 }
 
 .work-card:nth-child(4) {
-  background-image: url("Portfolio.png");
+  background-image: url("portfolio.png");
 }
 
 .work-card:nth-child(5) {
@@ -964,6 +964,73 @@
 
   /* MOBILE */
   @media (max-width: 768px) {
+   /* Prevent horizontal scroll */
+  html, body { overflow-x: hidden; }
+  
+  /* Stack the Hero elements */
+  .hero { padding: 100px 24px; text-align: center; height: auto; min-height: 100vh; }
+  .hero-actions { justify-content: center; flex-direction: column; }
+  
+  /* Move Stats below the buttons so they don't overlap */
+  .hero-stats { 
+    position: relative; 
+    right: auto; 
+    bottom: auto; 
+    margin-top: 60px; 
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 30px; 
+  }
+  .stat-item { text-align: center; }
+
+  /* Stack all Grids into 1 column */
+  .services-grid, .about-grid, .testimonials-grid, .why-grid, .work-grid { 
+    grid-template-columns: 1fr !important; 
+  }
+  
+  /* Fix Work Cards */
+  .work-card.featured { grid-column: span 1; aspect-ratio: 16/10; }
+  
+  /* Simplify Nav */
+  .nav-links { display: none; }
+  nav { padding: 20px 24px; }
+  
+  /* Adjust Section Titles */
+  .section-title { font-size: 3.5rem; }
+  .about-left .big-text { font-size: 5rem; }
+  
+  /* Stack the Hero elements */
+  .hero { padding: 100px 24px; text-align: center; height: auto; min-height: 100vh; }
+  .hero-actions { justify-content: center; flex-direction: column; }
+  
+  /* Move Stats below the buttons so they don't overlap */
+  .hero-stats { 
+    position: relative; 
+    right: auto; 
+    bottom: auto; 
+    margin-top: 60px; 
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 30px; 
+  }
+  .stat-item { text-align: center; }
+
+  /* Stack all Grids into 1 column */
+  .services-grid, .about-grid, .testimonials-grid, .why-grid, .work-grid { 
+    grid-template-columns: 1fr !important; 
+  }
+  
+  /* Fix Work Cards */
+  .work-card.featured { grid-column: span 1; aspect-ratio: 16/10; }
+  
+  /* Simplify Nav */
+  .nav-links { display: none; }
+  nav { padding: 20px 24px; }
+  
+  /* Adjust Section Titles */
+  .section-title { font-size: 3.5rem; }
+  .about-left .big-text { font-size: 5rem; }
+}
     nav { padding: 20px 24px; }
     .nav-links { display: none; }
     .hero { padding: 0 24px; }
@@ -976,7 +1043,6 @@
     footer { flex-direction: column; gap: 24px; text-align: center; }
     .hero-title { font-size: 4rem; }
     .why-ring, .ring1, .ring2, .ring3 { display: none; }
-  }
 </style>
 </head>
 <body>
@@ -1053,11 +1119,11 @@
       <div class="stat-label">Happy Clients</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">2+</div>
+      <div class="stat-num">6+</div>
       <div class="stat-label">Years Experience</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">150+</div>
+      <div class="stat-num">200+</div>
       <div class="stat-label">Projects Done</div>
     </div>
   </div>
@@ -1109,7 +1175,7 @@
         <div class="pill">Hyderabad, India</div>
         <div class="pill">Remote Ready</div>
         <div class="pill">50+ Projects</div>
-        <div class="pill">2+ Years</div>
+        <div class="pill">6+ Years</div>
         <div class="pill">Fast Delivery</div>
         <div class="pill">Brand Strategy</div>
       </div>
